@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Sign Up
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}">
+{% endblock %}
+
+{% block header %}
+    {{ self.title() }}
+{% endblock header %}
+
+{% block content %}
+    <form  class="form sign-up" method="post">
+        <input type="text" class="form-input sign-up" name="username" autocomplete="off" autofocus placeholder="Username">
+        <input type="password" class="form-input sign-up" name="password" autocomplete="off" autofocus placeholder="Password">
+        <input type="password" class="form-input sign-up" name="confirm" autocomplete="off" autofocus placeholder="Confirm Password">
+        <button type="submit" class="form-submit sign-up">{{ self.title() }}</button>
+    </form>
+{% endblock content %}

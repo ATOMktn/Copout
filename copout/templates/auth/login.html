@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Sign In
+{% endblock title %}
+
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}">
+{% endblock %}
+
+{% block header %}
+    {{ self.title() }}
+{% endblock header %}
+
+{% block content %}
+    <form  class="form sign-in" method="post">
+        <input type="text" class="form-input sign-in" name="username" autocomplete="off" autofocus placeholder="Username">
+        <input type="password" class="form-input sign-in" name="password" autocomplete="off" autofocus placeholder="Password">
+        <button type="submit" class="form-submit sign-in">{{ self.title() }}</button>
+    </form>
+{% endblock content %}

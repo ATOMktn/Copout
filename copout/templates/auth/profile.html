@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ g.user['username'] }} - Profile
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}">
+{% endblock %}
+
+{% block header %}
+    {{ self.title() }}
+{%  endblock %}
+
+{% block content %}
+    <section class="user info">
+        TODO:profile
+    </section>
+    <section class="user report">
+       {% include 'report/new-report.html' %}
+    </section>
+{% endblock %}

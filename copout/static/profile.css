@@ -1,0 +1,37 @@
+.user.report-header {
+    color: white;
+}
+
+textarea {
+    font-family: sans-serif;
+    font-size: small;
+}
+
+.form {
+    margin-top: 3em;
+}
+
+.flash {
+    width: 100%;
+    text-align: right;
+}
+
+.content.sub {
+    display: flex;
+    width: 75%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    top: 10em;
+}
+
+.title.sub {
+    width: 100%;
+}
+
+.user.info {
+    width: 35%;
+}
+
+.user.report {
+    width: 60%;
+}

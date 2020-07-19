@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+{% endblock %}
+{% block content %}
+    <section class="data sidebar">
+        TODO:sidebar
+    </section>
+    <section class="data map">
+    <iframe class="self map" src="{{ url_for('static', filename='map/map.html') }}">
+    </iframe>
+    </section>
+    <section class="data footer">
+        TODO:footer
+    </section>
+{% endblock %}
