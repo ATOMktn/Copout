@@ -152,13 +152,13 @@ def profile():
             try:
                 resp = requests.get('https://maps.googleapis.com/maps/api/geocode/json', params=payload)
                 response = resp.json()
-      
+                print(response)
                 if response['status'] == 'OK':
                     street = response['results'][0]['formatted_address'].split(',')[0]
                     coords = response['results'][0]['geometry']['location']
                     lat = coords['lat']
                     lng = coords['lng']
-                    city_name = None
+                    city_name = None or city
                     valid_state = None
                     country = None
 
