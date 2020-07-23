@@ -28,9 +28,7 @@ def index():
         lat = report['lat']
         lng = report['lng']
         folium.Marker([lat, lng]).add_to(folium_map)
-
-    folium_map.save('copout/static/map/map.html')
     
-    return render_template('report/index.html', reports=reports)
+    return render_template('report/index.html', reports=reports, map=folium_map.render())
 
 
