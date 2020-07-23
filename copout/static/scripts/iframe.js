@@ -1,6 +1,6 @@
 const iframe =  document.querySelector('iframe');
 
-const refreshFrame = () => iframe.src = iframe.src;
+const refreshFrame = () => iframe.src = 'copout/static/map/map.html';
 
-window.addEventListener('DOMContentLoaded', refreshFrame);
-window.removeEventListener('DOMContentLOaded', refreshFrame);
+window.addEventListener('load', refreshFrame);
+window.removeEventListener('load', refreshFrame);
