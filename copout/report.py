@@ -29,6 +29,6 @@ def index():
         lng = report['lng']
         folium.Marker([lat, lng]).add_to(folium_map)
     
-    return render_template('report/index.html', reports=reports, map=folium_map.render())
+    return render_template('report/index.html', reports=reports, map=folium_map.get_root().render())
 
 
