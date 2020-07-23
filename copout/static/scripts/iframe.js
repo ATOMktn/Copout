@@ -1,5 +1,5 @@
 const iframe =  document.querySelector('iframe');
 
-window.addEventListener('load', () => {
+window.addEventListener('click', () => {
     iframe.src = iframe.src;
 });
