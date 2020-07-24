@@ -15,6 +15,12 @@
 .data.sidebar {
     width: 100%;
     height: 25%;
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    background-color: white;
 }
 
 .data.footer {
@@ -27,4 +33,19 @@
     height: 100%;
     max-height: 610px;
     max-width: 975px;
+}
+
+.tbl.report {
+    margin: 0 auto;
+}
+
+.tile.report {
+    width: 20%;
+    min-width: 200px;
+    height: 100%;
+    margin: 0em .25em;
+    text-align: center;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #333;
+    color: antiquewhite;
 }

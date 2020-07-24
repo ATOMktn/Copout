@@ -9,7 +9,24 @@
 {% endblock %}
 {% block content %}
     <section class="data sidebar">
-        TODO:sidebar
+        {% for report in reports %}
+            <article class="tile report">
+                <table class="tbl report">
+                    <tr>
+                        <td>{{ report['title'] }}</td>                                
+                    </tr>
+                    <tr>
+                        <td>{{ report['date_of_inc'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ report['city_of_inc'] }}, {{ report['state_of_inc'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ report['org'] }}</td>
+                    </tr>
+                </table>
+            </article>
+        {% endfor %}
     </section>
     <section class="data map">
         <iframe class="map self" srcdoc="{{ map }}">

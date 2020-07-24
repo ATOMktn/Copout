@@ -19,7 +19,7 @@ bp = Blueprint('report', __name__)
 @bp.route('/')
 def index():
     db = get_db()
-    reports = db.execute('SELECT * FROM post')
+    reports = db.execute('SELECT * FROM post ORDER BY created DESC').fetchall()
 
     start_coords = (39.381266, -97.922211)
     folium_map = folium.Map(location=start_coords, zoom_start=4)
