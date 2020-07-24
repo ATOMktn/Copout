@@ -21,9 +21,6 @@
                     <tr>
                         <td>{{ report['city_of_inc'] }}, {{ report['state_of_inc'] }}</td>
                     </tr>
-                    <tr>
-                        <td>{{ report['org'] }}</td>
-                    </tr>
                 </table>
             </article>
         {% endfor %}
@@ -33,6 +30,6 @@
         </iframe>
     </section>
     <section class="data footer">
-        TODO:footer
+        {% include "report/new-report.html" %}
     </section>
 {% endblock %}

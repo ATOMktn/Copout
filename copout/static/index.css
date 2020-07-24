@@ -26,6 +26,9 @@
 .data.footer {
     width: 100%;
     height: 25%;
+    background-color: #333;
+    border-top: 1px solid antiquewhite;
+    min-height: 9em;
 }
 
 .self.map {
@@ -45,7 +48,27 @@
     height: 100%;
     margin: 0em .25em;
     text-align: center;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
     background-color: #333;
     color: antiquewhite;
+}
+
+.form.report {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.form-input.report {
+    margin: .25em;
+    box-sizing: border-box;
+}
+
+textarea {
+    max-height: 2em;
+}
+
+.user.report-header {
+    color: antiquewhite;
+    border-bottom: 1px solid antiquewhite;
 }
