@@ -17,7 +17,7 @@ from copout.db import get_db
 bp = Blueprint('report', __name__)
 
 @bp.route('/')
-def index():
+def index():  
     db = get_db()
     reports = db.execute('SELECT * FROM post ORDER BY created DESC').fetchall()
 
