@@ -1,4 +1,4 @@
-.about {
+.about, .disclaimer {
     margin-top: 2em;
 }
 
@@ -9,7 +9,7 @@
     flex-flow: column;
 }
 
-.content.about {
+.content.about, .content.disclaimer {
     position: relative;
     top: 15em;
     margin-left: 3em;
@@ -20,7 +20,7 @@
     align-items: center;
 }
 
-.content.about p {
+.content.about p, .content.disclaimer p {
     line-height: 2em;
     letter-spacing: .15em;
     border: 3px solid #333;
