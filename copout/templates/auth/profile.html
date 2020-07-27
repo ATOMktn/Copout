@@ -15,7 +15,16 @@
 
 {% block content %}
     <section class="user info">
-        TODO:profile
+        <table class="user data">
+            <tr>
+                <th scope="row">Member Since: </th>
+                <td>{{ datetime.date.fromisoformat(user['date_joined']).__format__("%b %d, %Y") }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Number of Reports: </th>
+                <td>{{ num_of_reports }}</td>
+            </tr>
+        </table>
     </section>
     <section class="user report">
        {% include 'report/new-report.html' %}

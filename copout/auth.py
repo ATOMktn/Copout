@@ -38,8 +38,8 @@ def register():
 
         if error is None:    
             db.execute(
-                'INSERT INTO user (username, password) VALUES (?, ?)',
-                (username, generate_password_hash(password))
+                'INSERT INTO user (username, password, date_joined) VALUES (?, ?, ?)',
+                (username, generate_password_hash(password), datetime.datetime.now().date())
             )
             db.commit()
             return redirect(url_for('auth.login'))
@@ -107,7 +107,10 @@ def login_required(view):
 @bp.route('/profile', methods=('POST', 'GET'))
 @login_required
 def profile():
-    if request.method == 'POST':
+    db = get_db()
+    user_id = g.user['id']
+
+    if request.method == 'POST':    
         title = request.form['title']
         date_of_inc = request.form['date-of-inc']
         address = request.form['address']
@@ -121,8 +124,7 @@ def profile():
         error = None
         date_error = 'Must provide valid date of incident (yyyy-mm-dd)'
         location_error = "Must provide valid U.S address"
-        db = get_db()
-
+        
         if not title:
             error = 'Must provide title'
 
@@ -196,11 +198,13 @@ def profile():
         if error is None:
             db.execute(
                 'INSERT INTO post (author_id, created, title, date_of_inc, address, city_of_inc, state_of_inc, lat, lng, persons, persons_id, org, summary) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', 
-                (g.user['id'], now, title, valid_date, street, city_name, valid_state, lat, lng, persons, persons_id, org, summary)
+                (user_id, now, title, valid_date, street, city_name, valid_state, lat, lng, persons, persons_id, org, summary)
                 )
             db.commit()
             return redirect(url_for('index'))
     
         flash(error)
 
-    return render_template('auth/profile.html')
+    user = db.execute('SELECT * FROM user WHERE id=?', (user_id,)).fetchone()
+    num_of_reports = db.execute('SELECT COUNT(author_id) AS num FROM post WHERE author_id=?', (user_id,)).fetchone()
+    return render_template('auth/profile.html', user=user, datetime=datetime, num_of_reports=num_of_reports['num'])
