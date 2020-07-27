@@ -27,7 +27,8 @@ def index():
     for report in reports:
         lat = report['lat']
         lng = report['lng']
-        folium.Marker([lat, lng]).add_to(folium_map)
+        tooltip = report['city_of_inc'] + ', ' + report['state_of_inc']
+        folium.Marker([lat, lng], tooltip=tooltip).add_to(folium_map)
     
     return render_template('report/index.html', reports=reports, map=folium_map.get_root().render())
 

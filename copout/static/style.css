@@ -1,7 +1,33 @@
+.about {
+    margin-top: 2em;
+}
+
 .content.main {
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-flow: column;
+}
+
+.content.about {
+    position: relative;
+    top: 15em;
+    margin-left: 3em;
+    padding-top: 6em;
+    padding-bottom: 8em;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.content.about p {
+    line-height: 2em;
+    letter-spacing: .15em;
+    border: 3px solid #333;
+    padding: 2em;
+    border-radius: 1em;
+    background-color: #333;
+    color: antiquewhite;
 }
 
 .dropdown {

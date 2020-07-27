@@ -24,7 +24,7 @@
                         <li><a class="link" href="{{ url_for('auth.login') }}">Sign In</a></li>
                         <li><a class="link" href="{{ url_for('auth.register') }}">Sign Up</a></li>
                     {% endif %}
-                    <li><a class="link" href="#">About</a></li>
+                    <li><a class="link" href="#about">About</a></li>
                     <li><a class="link" href="#">Disclaimer</a></li>
                 </ul>
             </nav>
@@ -41,6 +41,21 @@
                 {% endfor %}
                 {% block content %}
                 {% endblock %}
+            </section>
+            <section class="content about">
+                <header class="header about">
+                    <h1>
+                        Copout
+                    </h1>
+                </header>
+                <article class="art about" id="about">
+                    <p>
+                    Copout is a police malfeasance tracker that maps user submitted data.<br>
+                    The user is tasked with submitting an incident report when an instance<br>
+                    is witnessed. That report is then rendered as a marker on the main map,<br>
+                    along with any other users who have submited reports.
+                    </p>
+                </article>
             </section>
         </main>
         <script src="{{ url_for('static', filename='scripts/dropdown.js') }}"></script>
