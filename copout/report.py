@@ -28,6 +28,7 @@ def index():
         lat = report['lat']
         lng = report['lng']
         tooltip = report['city_of_inc'] + ', ' + report['state_of_inc']
+        #TODO: popup
         folium.Marker([lat, lng], tooltip=tooltip).add_to(folium_map)
     
     return render_template('report/index.html', reports=reports, map=folium_map.get_root().render())
