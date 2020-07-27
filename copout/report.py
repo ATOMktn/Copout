@@ -1,8 +1,6 @@
 import folium
 import os
 
-import pandas as pd
-
 import requests
 from requests import HTTPError
 
