@@ -18,7 +18,7 @@
         <table class="user data">
             <tr>
                 <th scope="row">Member Since: </th>
-                <td>{{ datetime.date.fromisoformat(user['date_joined']).__format__("%b %d, %Y") }}</td>
+                <td>{{ datetime.date.fromisoformat(str(user['date_joined'])).__format__("%b %d, %Y") }}</td>
             </tr>
             <tr>
                 <th scope="row">Number of Reports: </th>

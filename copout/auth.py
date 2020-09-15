@@ -154,7 +154,7 @@ def profile():
             try:
                 resp = requests.get('https://maps.googleapis.com/maps/api/geocode/json', params=payload)
                 response = resp.json()
-                print(response)
+                
                 if response['status'] == 'OK':
                     street = response['results'][0]['formatted_address'].split(',')[0]
                     coords = response['results'][0]['geometry']['location']
@@ -207,4 +207,4 @@ def profile():
 
     user = db.execute('SELECT * FROM user WHERE id=?', (user_id,)).fetchone()
     num_of_reports = db.execute('SELECT COUNT(author_id) AS num FROM post WHERE author_id=?', (user_id,)).fetchone()
-    return render_template('auth/profile.html', user=user, datetime=datetime, num_of_reports=num_of_reports['num'])
+    return render_template('auth/profile.html', user=user, str=str, datetime=datetime, num_of_reports=num_of_reports['num'])
