@@ -1,0 +1,4 @@
+include copout/schema.sql
+graft copout/static
+graft copout/templates
+global-exclude *.pyc
